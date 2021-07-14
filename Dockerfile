@@ -11,9 +11,5 @@ RUN apt-get update && apt-get upgrade -y \
 ADD start.sh ./
 ADD custom-script /etc/init.d/
 
-#ENTRYPOINT ["/sbin/init"]
-#CMD ["./entrypoint.sh"]
-
-#ENTRYPOINT ["./entrypoint.sh"]
-
+RUN chkconfig --add custom-script
 RUN update-rc.d custom-script defaults
