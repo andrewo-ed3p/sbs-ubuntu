@@ -11,5 +11,5 @@ RUN apt-get update && apt-get upgrade -y \
 ADD start.sh ./
 ADD custom-script /etc/init.d/
 
-RUN chkconfig --add custom-script
+#RUN chkconfig --add custom-script
 RUN update-rc.d custom-script defaults
