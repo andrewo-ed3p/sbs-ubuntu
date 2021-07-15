@@ -8,8 +8,12 @@ RUN apt-get update && apt-get upgrade -y \
        git \
        mc
 
-ADD start.sh ./
-ADD custom-script /etc/init.d/
+ADD start.sh /srv/
+#ADD custom-script /etc/init.d/
+##RUN chkconfig --add custom-script
+#RUN update-rc.d custom-script defaults
 
-#RUN chkconfig --add custom-script
-RUN update-rc.d custom-script defaults
+COPY customd /etc/systemd/system/customd.service
+RUN chmod 644 /etc/systemd/system/customd.service
+RUN systemctl enable customd.service
+

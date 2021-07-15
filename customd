@@ -1,0 +1,10 @@
+[Unit]
+Description=Custom systemd service.
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash /srv/start.sh
+
+[Install]
+WantedBy=multi-user.target
