@@ -9,9 +9,6 @@ RUN apt-get update && apt-get upgrade -y \
        mc
 
 ADD start.sh /srv/
-#ADD custom-script /etc/init.d/
-##RUN chkconfig --add custom-script
-#RUN update-rc.d custom-script defaults
 
 COPY customd /etc/systemd/system/customd.service
 RUN chmod 644 /etc/systemd/system/customd.service
