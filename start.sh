@@ -1,10 +1,7 @@
 #! /bin/bash
 
-echo "Begin" > /var/log/start.log echo
-
-mkdir /opt/project
+mkdir -p /opt/project
 cd /opt/project
-
 
 git clone https://github.com/andrewo-ed3p/sbs-compose.git
 
